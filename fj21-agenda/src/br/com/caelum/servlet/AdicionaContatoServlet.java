@@ -2,6 +2,7 @@ package br.com.caelum.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -51,7 +52,8 @@ public class AdicionaContatoServlet extends HttpServlet {
 		contato.setDataNascimento(dataNascimento);
 		
 		//salvar contato
-		ContatoDao dao = new ContatoDao();
+		Connection con = (Connection) request.getAttribute("cnx");
+		ContatoDao dao = new ContatoDao(con);
 		dao.adiciona(contato);
 		
 		//imprimir resultado na tela

@@ -46,8 +46,6 @@
 		<h1>Lista de Contatos</h1>
 		<hr/>
 			
-		<!-- Dao -->
-		<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/>
 		<table>
 			<!-- cabeçalho da tabela -->
 			<tr bgcolor="#4286f4">
@@ -55,10 +53,11 @@
 					<td><strong>Email</strong></td>
 					<td><strong>Endereco</strong></td>
 					<td><strong>Data Nascimento</strong></td>
+					<td><strong>Remover</strong></td>
 			</tr>
 			
 			<!-- linhas da tabela -->
-			<c:forEach var="contato" items="${dao.lista}" varStatus="id">
+			<c:forEach var="contato" items="${contatos}" varStatus="id">
 				<tr bgcolor="#${id.count % 2 == 0 ? 'f2ffed' : 'FFFFFF' }">
 					<td>${contato.nome}</td>
 					<!-- 
@@ -83,6 +82,7 @@
 					 </td>
 					<td>${contato.endereco}</td>
 					<td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" /></td>
+					<td><a href="/fj21-agenda/mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a></td>
 				</tr>
 			</c:forEach>
 		</table>

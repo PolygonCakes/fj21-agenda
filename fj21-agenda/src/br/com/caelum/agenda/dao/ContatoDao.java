@@ -22,6 +22,10 @@ public class ContatoDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public ContatoDao(Connection con) {
+		this.connection = con;
+	}
 
 	public void adiciona(Contato contato) {
 		try {
