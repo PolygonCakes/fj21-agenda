@@ -7,39 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Lista de Contatos</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				font-family: Arial;
-			}
-			h1 {
-				margin: 100px auto 50px auto;
-				text-align: center;
-			}
-			table {
-				margin: 50px auto;
-				background-color:#F7F7F7;
-			}
-			tr {
-				height: 40px;
-			}
-			td {
-				padding:5px;
-			}
-			a {
-				color:#4286f4;
-			}
-			.menu {
-				position: fixed;
-				top: 0;
-				height: 50px;
-				width: 100%;
-				background-color: #F7F7F7;
-				display: inline-flex;
-				align-items: center;
-			}
-		</style>
+		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<c:import url="/jsp/cabecalho.jsp" />
